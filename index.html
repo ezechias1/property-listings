@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PropVault | South Africa's Premier Property Platform</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="logo">
+        <span class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect x="2" y="12" width="24" height="14" rx="2" fill="#6c63ff" opacity="0.3"/>
+            <path d="M14 2L2 12h24L14 2z" fill="#6c63ff"/>
+            <rect x="11" y="17" width="6" height="9" rx="1" fill="#00d4aa"/>
+          </svg>
+        </span>
+        <span class="logo-text">Prop<span class="accent">Vault</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#properties">Properties</a></li>
+        <li><a href="#stats">About</a></li>
+        <li><a href="#" class="btn btn-outline btn-sm">List Property</a></li>
+      </ul>
+      <button class="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+      <p class="hero-tag">South Africa's Premier Property Platform</p>
+      <h1 class="hero-title">Find Your <span class="accent">Dream Home</span></h1>
+      <p class="hero-sub">Browse thousands of properties across Cape Town, Johannesburg, Durban and beyond.</p>
+
+      <div class="search-box">
+        <div class="search-field">
+          <label for="search-location">Location</label>
+          <input type="text" id="search-location" placeholder="e.g. Cape Town, Sandton...">
+        </div>
+        <div class="search-field">
+          <label for="search-type">Property Type</label>
+          <select id="search-type">
+            <option value="">All Types</option>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Studio">Studio</option>
+          </select>
+        </div>
+        <div class="search-field">
+          <label for="search-price">Max Price</label>
+          <select id="search-price">
+            <option value="">Any Price</option>
+            <option value="1500000">Under R1.5M</option>
+            <option value="3000000">Under R3M</option>
+            <option value="5000000">Under R5M</option>
+            <option value="8500000">Under R8.5M</option>
+          </select>
+        </div>
+        <button class="btn btn-primary search-btn" id="search-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          Search
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats" id="stats">
+    <div class="container stats-grid">
+      <div class="stat-card">
+        <span class="stat-number" data-target="1247">0</span>
+        <span class="stat-label">Properties Listed</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-target="52">0</span>
+        <span class="stat-label">Areas Covered</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-prefix="R" data-suffix="K" data-target="850">0</span>
+        <span class="stat-label">Avg. Price</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number" data-suffix="%" data-target="98">0</span>
+        <span class="stat-label">Client Satisfaction</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <section class="filter-section" id="properties">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Properties</h2>
+        <p class="section-sub">Handpicked listings across South Africa</p>
+      </div>
+      <div class="filter-bar">
+        <div class="filter-group">
+          <label for="filter-sort">Sort by</label>
+          <select id="filter-sort">
+            <option value="default">Featured</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-beds">Bedrooms</label>
+          <select id="filter-beds">
+            <option value="">Any</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5+</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-type">Type</label>
+          <select id="filter-type">
+            <option value="">All</option>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+            <option value="Townhouse">Townhouse</option>
+            <option value="Studio">Studio</option>
+          </select>
+        </div>
+        <button class="btn btn-ghost" id="clear-filters">Clear Filters</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPERTY GRID -->
+  <section class="properties-section">
+    <div class="container">
+      <div class="property-grid" id="property-grid">
+        <!-- Cards injected by JS -->
+      </div>
+      <p class="no-results hidden" id="no-results">No properties match your criteria. Try adjusting your filters.</p>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <div class="modal-body" id="modal-body">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">Prop<span class="accent">Vault</span></span>
+        <p>South Africa's trusted property marketplace. Connecting buyers, sellers, and renters since 2020.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explore</h4>
+        <a href="#">Buy</a>
+        <a href="#">Rent</a>
+        <a href="#">New Developments</a>
+        <a href="#">Agents</a>
+      </div>
+      <div class="footer-links">
+        <h4>Company</h4>
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 PropVault. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
